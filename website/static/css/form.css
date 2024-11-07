@@ -1,0 +1,92 @@
+/* Form Container Styles */
+.form-container {
+    background-image: url('form.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85); 
+    text-align: center;
+}
+
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Labels */
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Input and Textarea Fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+    font-size: 16px;
+}
+
+/* Change border color on focus */
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styles */
+.form-container button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Success and Error Message Styles */
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.message.success {
+    background-color: #28a745;
+}
+
+.message.error {
+    background-color: #dc3545;
+}
+body {
+    background: linear-gradient(to right, #f0f4fd, #d0e8fa);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}

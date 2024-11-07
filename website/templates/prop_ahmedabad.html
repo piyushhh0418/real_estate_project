@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}More Properties Ahmedabad{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+
+<!-- Property 1 -->
+<div class="property-box" id="property-box-1">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad1.jpg') }}" alt="Property 1">
+    <div class="property-info">
+        <div class="property-title">Elegant Bungalow</div>
+        <div class="property-location">Satellite, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-1" style="display: none;">
+        <h2>Elegant Bungalow</h2>
+        <p>Location: Satellite, Ahmedabad</p>
+        <p>Price: ₹4 Crore</p>
+        <p>Description: A luxurious bungalow with modern amenities, located in a prime area with lush greenery.</p>
+        <button onclick="toggleDetails(1)">Close</button>
+    </div>
+</div>
+
+<!-- Property 2 -->
+<div class="property-box" id="property-box-2">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad2.jpg') }}" alt="Property 2">
+    <div class="property-info">
+        <div class="property-title">Contemporary 3 BHK Flat</div>
+        <div class="property-location">Gujarat University, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-2" style="display: none;">
+        <h2>Contemporary 3 BHK Flat</h2>
+        <p>Location: Gujarat University, Ahmedabad</p>
+        <p>Price: ₹85 Lakhs</p>
+        <p>Description: A modern 3 BHK flat with state-of-the-art amenities, located near educational institutions and shopping centers.</p>
+        <button onclick="toggleDetails(2)">Close</button>
+    </div>
+</div>
+
+<!-- Property 3 -->
+<div class="property-box" id="property-box-3">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad3.jpg') }}" alt="Property 3">
+    <div class="property-info">
+        <div class="property-title">Penthouse with Terrace</div>
+        <div class="property-location">Vastrapur, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-3" style="display: none;">
+        <h2>Penthouse with Terrace</h2>
+        <p>Location: Vastrapur, Ahmedabad</p>
+        <p>Price: ₹2.5 Crore</p>
+        <p>Description: A luxurious penthouse featuring a private terrace with panoramic views of the city, ideal for upscale living.</p>
+        <button onclick="toggleDetails(3)">Close</button>
+    </div>
+</div>
+
+<!-- Property 4 -->
+<div class="property-box" id="property-box-4">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad4.jpg') }}" alt="Property 4">
+    <div class="property-info">
+        <div class="property-title">Independent Villa</div>
+        <div class="property-location">Maninagar, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-4" style="display: none;">
+        <h2>Independent Villa</h2>
+        <p>Location: Maninagar, Ahmedabad</p>
+        <p>Price: ₹1.8 Crore</p>
+        <p>Description: A spacious 5 BHK independent villa in a peaceful neighborhood, perfect for large families seeking privacy and comfort.</p>
+        <button onclick="toggleDetails(4)">Close</button>
+    </div>
+</div>
+
+<!-- Property 5 -->
+<div class="property-box" id="property-box-5">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad5.jpg') }}" alt="Property 5">
+    <div class="property-info">
+        <div class="property-title">Budget 2 BHK Apartment</div>
+        <div class="property-location">Naranpura, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-5" style="display: none;">
+        <h2>Budget 2 BHK Apartment</h2>
+        <p>Location: Naranpura, Ahmedabad</p>
+        <p>Price: ₹60 Lakhs</p>
+        <p>Description: A budget-friendly 2 BHK apartment, well-connected and located near essential services and local markets.</p>
+        <button onclick="toggleDetails(5)">Close</button>
+    </div>
+</div>
+
+<!-- Property 6 -->
+<div class="property-box" id="property-box-6">
+    <img class="property-image" src="{{ url_for('static', filename='images/ahmedabad6.jpg') }}" alt="Property 6">
+    <div class="property-info">
+        <div class="property-title">3 BHK in Gated Community</div>
+        <div class="property-location">Sardar Patel Stadium, Ahmedabad</div>
+        <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-6" style="display: none;">
+        <h2>3 BHK in Gated Community</h2>
+        <p>Location: Sardar Patel Stadium, Ahmedabad</p>
+        <p>Price: ₹1.2 Crore</p>
+        <p>Description: A modern 3 BHK apartment within a gated community, offering amenities like a swimming pool, gym, and landscaped gardens.</p>
+        <button onclick="toggleDetails(6)">Close</button>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Properties{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/properties.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            
+            <a class="nav-item nav-link" href="{{ url_for('views.add_property') }}">Add Your Property</a>
+            <a class="nav-item nav-link" href="{{ url_for('property.rent_properties') }}">Available Properties</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Explore Properties Across Cities</h1>
+
+    <div class="row">
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/ppdelhi.jpg') }}" class="property-image" alt="Property in Delhi">
+                <div class="property-details">
+                    <h4>Properties in Delhi</h4>
+                    <p>Capital of India has various properties throughout the state </p>
+                    <p class="location">Delhi, India</p>
+                    <a href="{{ url_for('views.prop_delhi') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/pune.jpg') }}" class="property-image" alt="Property in Pune">
+                <div class="property-details">
+                    <h4>Properties in Pune</h4>
+                    <p>Pune has various properties to purchase</p>
+                    <p class="location">Pune, India</p>
+                    <a href="{{ url_for('views.pune_etc') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/ppbang.jpg') }}" class="property-image" alt="Property in Bangalore">
+                <div class="property-details">
+                    <h4>Banglore Properties</h4>
+                    <p>The IT Heart of India has various sites for settlement</p>
+                    <p class="location">Bangalore, India</p>
+                    <a href="{{ url_for('views.prop_banglore') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/ppmumbai.jpg') }}" class="property-image" alt="Property in Mumbai">
+                <div class="property-details">
+                    <h4>Various Properties in Mumbai</h4>
+                    <p>Financial Capital Of India has various Big and small properties</p>
+                    <p class="location">Mumbai, India</p>
+                    <a href="{{ url_for('views.prop_mumbai') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/pphyde.jpg') }}" class="property-image" alt="Property in Hyderabad">
+                <div class="property-details">
+                    <h4>Properties Hyderabad</h4>
+                    <p>Has various complex and simple houses</p>
+                    <p class="location">Hyderabad, India</p>
+                    <a href="{{ url_for('views.prop_hyderabad') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="property-card">
+                <img src="{{ url_for('static', filename='images/ppchenn.jpg') }}" class="property-image" alt="Property in Chennai">
+                <div class="property-details">
+                    <h4> Chennai</h4>
+                    <p>Coastal Side of India with various sites and good facilities</p>
+                    <p> class="location">Chennai, India</p>
+                    <a href="{{ url_for('views.prop_chennai') }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+   
+
+
+<script>
+    function toggleDetails(propertyId) {
+        var detailsDiv = document.getElementById('details-' + propertyId);
+        if (detailsDiv.style.display === 'none' || detailsDiv.style.display === '') {
+            detailsDiv.style.display = 'block';
+        } else {
+            detailsDiv.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

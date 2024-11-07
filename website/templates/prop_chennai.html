@@ -1,0 +1,120 @@
+{%extends "base.html"%}{%block title%}More Chennai Properties{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+<div class="property-box" id="property-box-1">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai1.jpg') }}" alt="Property 1">
+    <div class="property-info">
+        <div class="property-title">Beachfront Villa</div>
+        <div class="property-location">ECR, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-1" style="display: none;">
+        <h2>Beachfront Villa</h2>
+        <p>Location: ECR, Chennai</p>
+        <p>Price: ₹5 Crore</p>
+        <p>Description: A luxurious beachfront villa with modern architecture and direct beach access on East Coast Road.</p>
+        <button onclick="toggleDetails(1)">Close</button>
+    </div>
+</div>
+
+<!-- Property 2 -->
+<div class="property-box" id="property-box-2">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai2.jpg') }}" alt="Property 2">
+    <div class="property-info">
+        <div class="property-title">Budget Apartment</div>
+        <div class="property-location">Velachery, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-2" style="display: none;">
+        <h2>Budget Apartment</h2>
+        <p>Location: Velachery, Chennai</p>
+        <p>Price: ₹55 Lakhs</p>
+        <p>Description: A 2 BHK budget apartment in a prime location close to IT parks, ideal for working professionals.</p>
+        <button onclick="toggleDetails(2)">Close</button>
+    </div>
+</div>
+
+<!-- Property 3 -->
+<div class="property-box" id="property-box-3">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai3.jpg') }}" alt="Property 3">
+    <div class="property-info">
+        <div class="property-title">Luxury Villa</div>
+        <div class="property-location">Nungambakkam, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-3" style="display: none;">
+        <h2>Luxury Villa</h2>
+        <p>Location: Nungambakkam, Chennai</p>
+        <p>Price: ₹4.5 Crore</p>
+        <p>Description: A spacious 4 BHK villa located in the upscale neighborhood of Nungambakkam, offering premium amenities and security.</p>
+        <button onclick="toggleDetails(3)">Close</button>
+    </div>
+</div>
+
+<!-- Property 4 -->
+<div class="property-box" id="property-box-4">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai4.jpg') }}" alt="Property 4">
+    <div class="property-info">
+        <div class="property-title">Independent House</div>
+        <div class="property-location">Tambaram, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-4" style="display: none;">
+        <h2>Independent House</h2>
+        <p>Location: Tambaram, Chennai</p>
+        <p>Price: ₹75 Lakhs</p>
+        <p>Description: A cozy 3 BHK independent house with private parking, located near schools and public transportation in Tambaram.</p>
+        <button onclick="toggleDetails(4)">Close</button>
+    </div>
+</div>
+
+<!-- Property 5 -->
+<div class="property-box" id="property-box-5">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai5.jpg') }}" alt="Property 5">
+    <div class="property-info">
+        <div class="property-title">Studio Apartment</div>
+        <div class="property-location">Adyar, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-5" style="display: none;">
+        <h2>Studio Apartment</h2>
+        <p>Location: Adyar, Chennai</p>
+        <p>Price: ₹35 Lakhs</p>
+        <p>Description: A compact studio apartment perfect for students or working professionals, located in a prime area.</p>
+        <button onclick="toggleDetails(5)">Close</button>
+    </div>
+</div>
+
+<!-- Property 6 -->
+<div class="property-box" id="property-box-6">
+    <img class="property-image" src="{{ url_for('static', filename='images/chennai6.jpg') }}" alt="Property 6">
+    <div class="property-info">
+        <div class="property-title">Penthouse Apartment</div>
+        <div class="property-location">T Nagar, Chennai</div>
+        <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-6" style="display: none;">
+        <h2>Penthouse Apartment</h2>
+        <p>Location: T Nagar, Chennai</p>
+        <p>Price: ₹3.5 Crore</p>
+        <p>Description: A luxurious penthouse apartment with a rooftop terrace and panoramic views, located in the bustling T Nagar area.</p>
+        <button onclick="toggleDetails(6)">Close</button>
+    </div>
+</div>
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    }
+</script>
+{%endblock%}

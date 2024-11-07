@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}More Delhi Properties{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+
+<div class="container">
+    <!-- Property 1 -->
+    <div class="property-box" id="property-box-1">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi1.jpg') }}" alt="Property 1">
+        <div class="property-info">
+            <div class="property-title">Luxury Apartment</div>
+            <div class="property-location">Connaught Place, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-1" style="display: none;">
+            <h2>Luxury Apartment</h2>
+            <p>Location: Connaught Place, New Delhi</p>
+            <p>Price: ₹3 Crore</p>
+            <p>Description: A luxury 3 BHK apartment in the heart of Delhi with modern interiors, high-end amenities, and excellent connectivity.</p>
+            <button onclick="toggleDetails(1)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="property-box" id="property-box-2">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi2.jpg') }}" alt="Property 2">
+        <div class="property-info">
+            <div class="property-title">Modern Villa</div>
+            <div class="property-location">Vasant Kunj, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-2" style="display: none;">
+            <h2>Modern Villa</h2>
+            <p>Location: Vasant Kunj, New Delhi</p>
+            <p>Price: ₹4.5 Crore</p>
+            <p>Description: A stunning modern villa with private garden, terrace, and luxury amenities located in a posh area of South Delhi.</p>
+            <button onclick="toggleDetails(2)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="property-box" id="property-box-3">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi3.jpg') }}" alt="Property 3">
+        <div class="property-info">
+            <div class="property-title">Affordable Flat</div>
+            <div class="property-location">Rohini, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-3" style="display: none;">
+            <h2>Affordable Flat</h2>
+            <p>Location: Rohini, New Delhi</p>
+            <p>Price: ₹85 Lakhs</p>
+            <p>Description: A budget-friendly 2 BHK flat in Rohini with nearby schools, hospitals, and metro access.</p>
+            <button onclick="toggleDetails(3)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 4 -->
+    <div class="property-box" id="property-box-4">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi4.jpg') }}" alt="Property 4">
+        <div class="property-info">
+            <div class="property-title">Penthouse Suite</div>
+            <div class="property-location">Greater Kailash, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-4" style="display: none;">
+            <h2>Penthouse Suite</h2>
+            <p>Location: Greater Kailash, New Delhi</p>
+            <p>Price: ₹8 Crore</p>
+            <p>Description: A luxurious penthouse suite with a private terrace, offering stunning views of the city in one of Delhi's top locations.</p>
+            <button onclick="toggleDetails(4)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 5 -->
+    <div class="property-box" id="property-box-5">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi5.jpg') }}" alt="Property 5">
+        <div class="property-info">
+            <div class="property-title">Eco-Friendly Villa</div>
+            <div class="property-location">Chattarpur, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-5" style="display: none;">
+            <h2>Eco-Friendly Villa</h2>
+            <p>Location: Chattarpur, New Delhi</p>
+            <p>Price: ₹3.8 Crore</p>
+            <p>Description: An eco-friendly villa with sustainable features such as solar panels and rainwater harvesting systems, in a peaceful neighborhood.</p>
+            <button onclick="toggleDetails(5)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 6 -->
+    <div class="property-box" id="property-box-6">
+        <img class="property-image" src="{{ url_for('static', filename='images/delhi6.jpg') }}" alt="Property 6">
+        <div class="property-info">
+            <div class="property-title">Studio Apartment</div>
+            <div class="property-location">Dwarka, New Delhi</div>
+            <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-6" style="display: none;">
+            <h2>Studio Apartment</h2>
+            <p>Location: Dwarka, New Delhi</p>
+            <p>Price: ₹45 Lakhs</p>
+            <p>Description: A compact and affordable studio apartment perfect for single professionals, close to metro stations and shopping malls.</p>
+            <button onclick="toggleDetails(6)">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    }
+</script>
+
+{% endblock %}

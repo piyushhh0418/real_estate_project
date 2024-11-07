@@ -1,0 +1,315 @@
+/* Navbar customization */
+.navbar-custom {
+    background: linear-gradient(135deg, #2c2f33, #23272a); 
+    border-bottom: 2px solid #1f2226;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.navbar-nav .nav-link {
+    color: #b0b3b8; 
+    transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background: linear-gradient(90deg, aquamarine, #38d9a9); /* Gradient on hover */
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Elevating the hover effect */
+}
+
+.navbar-logo {
+    height: 60px; 
+    width: auto; 
+    margin-right: 10px; 
+    vertical-align: middle; 
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1); 
+    opacity: 0.8;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center; 
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px; 
+}
+
+.navbar-brand i {
+    font-size: 1.5rem; 
+    color: #ffffff;
+    margin-right: 10px;
+    transition: color 0.4s ease; /* Smooth icon hover effect */
+}
+
+.navbar-brand i:hover {
+    color: #38d9a9; /* Adding color transition to the brand icon */
+}
+
+/* Chatbot styles */
+.chatbot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #007BFF, #00D4FF); /* Gradient for bot */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: float 2s infinite ease-in-out;
+}
+
+.chatbot:hover {
+    background: linear-gradient(135deg, #0056b3, #006bb3); /* Deeper hover colors */
+    box-shadow: 0 15px 25px rgba(0, 123, 255, 0.6);
+    transform: translateY(-5px) rotate(15deg); /* Add rotation on hover */
+}
+
+/* Floating effect for chatbot */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Chat window container */
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.6s ease-in-out; /* Add animation when chat opens */
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat window header */
+.chat-window-header {
+    background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradient header */
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-window-header .close-chat {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.chat-window-header .close-chat:hover {
+    color: #FF4D4D;
+}
+
+/* Chat messages area */
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Messages bubbles */
+.user-message {
+    background-color: #38d9a9;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    align-self: flex-end;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bot-message {
+    background-color: #4FC3F7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    align-self: flex-start;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat input area */
+.chat-input-container {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+}
+
+.chat-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+.chat-input:focus {
+    border: 1px solid #007BFF;
+    outline: none;
+}
+
+.chat-send {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-send:hover {
+    background-color: #0056b3;
+}
+
+/* Icons */
+.bot-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Navbar links */
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #38d9a9;
+}
+
+/* Search bar enhancements */
+.search-bar {
+    display: flex;
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding depth */
+    transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background-color: #38d9a9;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #28c7a0;
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+/* base.css */
+.go-back-container {
+    position: fixed;
+    bottom: 10px; /* Adjust distance from the bottom */
+    left: 10px; /* Adjust distance from the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.go-back-button {
+    background-color: #007bff; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    cursor: pointer;
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease;
+}
+
+.go-back-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 20px;
+}
+
+.user-info i {
+    margin-right: 5px;
+}
+
+.user-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+

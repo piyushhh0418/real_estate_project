@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}My Property{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/my_property.css') }}">
+
+<div class="property-grid">
+    {% for property in properties %}
+    <div class="property-box">
+        <strong>{{ property.title }}</strong> <br>
+        <p>Price: {{ property.price }}</p>
+        <p>Location: {{ property.location }}</p>
+
+        {% if property.image1 %}
+            <img src="{{ url_for('static', filename='uploads/' ~ property.image1) }}" alt="{{ property.title }} image 1" width="150">
+        {% endif %}
+
+        {% if property.image2 %}
+            <img src="{{ url_for('static', filename='uploads/' ~ property.image2) }}" alt="{{ property.title }} image 2" width="150">
+        {% endif %}
+
+        <button class="details-btn" onclick="toggleDetails('{{ loop.index }}')">More Details</button>
+
+        <div id="details-{{ loop.index }}" class="details" style="display:none;">
+            <p>{{ property.description }}</p>
+            <p>Bedrooms: {{ property.bedrooms }}</p>
+            <p>Bathrooms: {{ property.bathrooms }}</p>
+            <p>Date Added: {{ property.date_added.strftime('%Y-%m-%d') }}</p>
+        </div>
+
+        <h4>Interested Users:</h4>
+        <p>Number of interested users: {{ property.interested_users|length }}</p>
+
+        {% if property.interested_users|length > 0 %}
+        <ul>
+            {% for interest in property.interested_users %}
+            <li>
+                {{ interest.name }} {{interest.phone}}({{ interest.email }}) - Interested on {{ interest.date_interested.strftime('%Y-%m-%d') }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No interested users yet.</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function toggleDetails(index) {
+        const detailsDiv = document.getElementById('details-' + index);
+        if (detailsDiv.style.display === 'none') {
+            detailsDiv.style.display = 'block';
+        } else {
+            detailsDiv.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

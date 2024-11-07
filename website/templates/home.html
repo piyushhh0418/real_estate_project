@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<div class="hero-section">
+    <div class="container text-center">
+        <h1>Welcome to Your Dream Property Finder</h1>
+        <p class="lead">Discover your perfect home across India with ease and confidence.</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row about-section">
+        <div class="col-md-6">
+            <h2>About Us</h2>
+            <p>
+                We are a leading real estate platform dedicated to helping you find the perfect property across India. Whether you're looking for a residential home, a commercial space, or a plot of land, we have a wide range of properties to meet your needs.
+            </p>
+            <p>
+                Our mission is to provide you with a seamless experience in your property search, offering verified listings, expert advice, and comprehensive support from start to finish.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://img.freepik.com/premium-photo/real-estate-icon-rendering_1235831-256071.jpg?size=626&ext=jpg&ga=GA1.1.1259016381.1722528251&semt=ais_hybrid" class="img-fluid rounded" alt="About Us">
+        </div>
+    </div>
+
+    <div class="row mt-5 locations-section">
+        <div class="col-12">
+            <h2>Our Property Locations</h2>
+            <p>
+                We offer properties in major cities across India, including:
+            </p>
+            <div class="row mt-4">
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.mumbai') }}">
+                        <img src="https://plus.unsplash.com/premium_photo-1681550093390-14477e7b196a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bXVtYmFpfGVufDB8fDB8fHww" class="location-img rounded-circle" alt="Mumbai">
+                        <h4>Mumbai</h4>
+                    </a>
+                    <p>The financial capital, offering luxurious apartments and commercial spaces.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.delhi') }}">
+                        <img src="https://media.istockphoto.com/id/1254934253/photo/central-new-delhi.webp?a=1&b=1&s=612x612&w=0&k=20&c=5viLGbuq69tF5aD1-LBhABdsR4F0udTT4hi8-H0TIzs=" class="location-img rounded-circle" alt="Delhi">
+                        <h4>Delhi</h4>
+                    </a>
+                    <p>The heart of India, with a mix of modern and traditional properties.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.banglore') }}">
+                        <img src="https://images.unsplash.com/photo-1655322126436-9dd898d4a636?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJhbmdsb3JlfGVufDB8fDB8fHww" class="location-img rounded-circle" alt="Bangalore">
+                        <h4>Bangalore</h4>
+                    </a>
+                    <p>The Silicon Valley of India, known for its IT hubs and residential areas.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.pune') }}">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Aga_Khan_Bridge_in_Pune.jpg/288px-Aga_Khan_Bridge_in_Pune.jpg" class="location-img rounded-circle" alt="Pune">
+                        <h4>Pune</h4>
+                    </a>
+                    <p>The Cultural and Educational City of India, known for its IT hubs and residential areas.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.ahmedabad') }}">
+                        <img src="{{ url_for('static', filename='images/guju.jpg') }}"  class="location-img rounded-circle" alt="Ahmedabad">
+                        <h4>Ahmedabad</h4>
+                    </a>
+                    <p>Ahmedabad is the largest city in the Gujarat state, in Western India. The city is the administrative centre of Ahmedabad district, and was the capital of Gujarat.With great infrastructures and good job opportunities to settle-down here</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{ url_for('views.vizag') }}">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Vizag_aerial_view.jpg"  class="location-img rounded-circle" alt="Vishakapatnam">
+                        <h4>Vishakapatnam</h4>
+                    </a>
+                    <p>Visakhapatnam serves as the headquarters for the Indian Navy's Eastern Naval Command. It has alot of good buildings modern living ways to settle-down.Good Job opportunities.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

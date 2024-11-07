@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Rent Properties{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rent_properties.css') }}">
+
+<div class="property-grid">
+    {% for property in properties %}
+    <div class="property-box">
+        <strong>{{ property.title }}</strong> <br>
+        <p>Price: {{ property.price }}</p>
+        <p>Location: {{ property.location }}</p>
+        
+        {% if property.image1 %}
+            <img src="{{ url_for('static', filename='uploads/' ~ property.image1) }}" alt="{{ property.title }} image 1" width="150">
+        {% endif %}
+
+        {% if property.image2 %}
+            <img src="{{ url_for('static', filename='uploads/' ~ property.image2) }}" alt="{{ property.title }} image 2" width="150">
+        {% endif %}
+
+        <!-- More Details Toggle -->
+        <button class="details-btn" onclick="toggleDetails('{{ loop.index }}')">More Details</button>
+
+        <div id="details-{{ loop.index }}" class="details" style="display:none;">
+            <p>{{ property.description }}</p>
+            <p>Bedrooms: {{ property.bedrooms }}</p>
+            <p>Bathrooms: {{ property.bathrooms }}</p>
+            <p>Date Added: {{ property.date_added.strftime('%Y-%m-%d') }}</p>
+        </div>
+
+        <!-- Interested Button -->
+        <form action="{{ url_for('property.interest_in_property', property_id=property.id) }}" method="POST">
+
+            <button type="submit" class="interested-btn">I'm Interested</button>
+        </form>
+        
+
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function toggleDetails(index) {
+        const detailsDiv = document.getElementById('details-' + index);
+        if (detailsDiv.style.display === 'none') {
+            detailsDiv.style.display = 'block';
+        } else {
+            detailsDiv.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

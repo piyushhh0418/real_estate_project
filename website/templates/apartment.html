@@ -1,0 +1,164 @@
+{% extends "base.html" %}{%block title%}Apartment{%endblock%}
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/apartment.css') }}"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/villa.css') }}">
+<div class="container my-5">
+    <h2 class="text-center mb-4">Luxury Apartments Across India</h2>
+    
+    <div class="row apartments-grid">
+        
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/mumbai_apartment1.jpg') }}" class="img-fluid rounded" alt="Mumbai Apartment">
+                <img src="{{ url_for('static', filename='images/mumbai_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Mumbai Apartment Interior">
+            </div>
+            <h3>Luxury Apartment in Mumbai</h3>
+            <p class="text-muted">Mumbai, Maharashtra</p>
+            <p>Modern high-rise apartment with panoramic sea views in Mumbai.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('mumbai_apartment')">More Details</button>
+            <div id="mumbai_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1500 sq. ft.</li>
+                    <li>Price: ₹5 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Swimming Pool: Yes</li>
+                    <li>Gym: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('mumbai_apartment')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/delhi_apartment1.jpg') }}" class="img-fluid rounded" alt="Delhi Apartment">
+                <img src="{{ url_for('static', filename='images/delhi_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Delhi Apartment Interior">
+            </div>
+            <h3>Elegant Apartment in Delhi</h3>
+            <p class="text-muted">Delhi, India</p>
+            <p>Spacious apartment with modern amenities in the heart of New Delhi.A 2 BHK Flat is accessible for rental in Shivaji Enclave West Delhi. It has area of 800 sqft and is accessible at a lease of Rs. 16,000. The house is semi-furnished. This private property is prepared to-move-in. It is made in method for giving an open to living. The general public is very much associated by various methods of transportation</p>
+            <button class="btn btn-primary" onclick="toggleDetails('delhi_apartment')">More Details</button>
+            <div id="delhi_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1800 sq. ft.</li>
+                    <li>Price: ₹6 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Rooftop Terrace: Yes</li>
+                    <li>Private Parking: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('delhi_apartment')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/bangalore_apartment1.jpg') }}" class="img-fluid rounded" alt="Bangalore Apartment">
+                <img src="{{ url_for('static', filename='images/bangalore_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Bangalore Apartment Interior">
+            </div>
+            <h3>High-rise Apartment in Bangalore</h3>
+            <p class="text-muted">Bangalore, Karnataka</p>
+            <p>Luxury apartment in a high-rise tower with stunning city views in Bangalore.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('bangalore_apartment')">More Details</button>
+            <div id="bangalore_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 2000 sq. ft.</li>
+                    <li>Price: ₹7 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Clubhouse: Yes</li>
+                    <li>Private Parking: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('bangalore_apartment')">Less Details</button>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/chennai_apartment1.jpg') }}" class="img-fluid rounded" alt="Chennai Apartment">
+                <img src="{{ url_for('static', filename='images/chennai_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Chennai Apartment Interior">
+            </div>
+            <h3>Seaside Apartment in Chennai</h3>
+            <p class="text-muted">Chennai, Tamil Nadu</p>
+            <p>Beautiful apartment with sea views and modern amenities in Chennai.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('chennai_apartment')">More Details</button>
+            <div id="chennai_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1600 sq. ft.</li>
+                    <li>Price: ₹4.5 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Proximity to Beach: 10 mins walk</li>
+                    <li>Private Pool: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('chennai_apartment')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/pune_apartment1.jpg') }}" class="img-fluid rounded" alt="Pune Apartment">
+                <img src="{{ url_for('static', filename='images/pune_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Pune Apartment Interior">
+            </div>
+            <h3>Premium Apartment in Pune</h3>
+            <p class="text-muted">Pune, Maharashtra</p>
+            <p>Spacious apartment in a premium locality with modern amenities in Pune.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('pune_apartment')">More Details</button>
+            <div id="pune_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1800 sq. ft.</li>
+                    <li>Price: ₹4 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Gym: Yes</li>
+                    <li>Playground: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('pune_apartment')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 apartment-item">
+            <div class="apartment-images">
+                <img src="{{ url_for('static', filename='images/hyderabad_apartment1.jpg') }}" class="img-fluid rounded" alt="Hyderabad Apartment">
+                <img src="{{ url_for('static', filename='images/hyderabad_apartment1_int.jpg') }}" class="img-fluid rounded mt-2" alt="Hyderabad Apartment Interior">
+            </div>
+            <h3>Modern Apartment in Hyderabad</h3>
+            <p class="text-muted">Hyderabad, Telangana</p>
+            <p>Contemporary apartment with cutting-edge facilities in Hyderabad's IT hub.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('hyderabad_apartment')">More Details</button>
+            <div id="hyderabad_apartment" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1700 sq. ft.</li>
+                    <li>Price: ₹5 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Swimming Pool: Yes</li>
+                    <li>Clubhouse: Yes</li>
+                    <li>More Details Rent Inquiry:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('hyderabad_apartment')">Less Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function toggleDetails(id) {
+    var details = document.getElementById(id);
+    if (details.style.display === "none") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

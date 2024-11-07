@@ -1,0 +1,82 @@
+{%extends "base.html"%}{% block title %}Vishakapatnam{%endblock%}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vizag.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Vishakapatnam</h1>
+
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/vizag1.jpg') }}" class="img-fluid rounded" alt="Beachfront Property Image 1">
+                <img src="{{ url_for('static', filename='images/vizag1int.jpg') }}" class="img-fluid rounded mt-2" alt="Beachfront Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Beachfront Villa</h3>
+            <p class="text-muted">Rishikonda, Vishakapatnam</p>
+            <p>
+                This luxurious villa is located on the beachfront with stunning ocean views. Enjoy modern amenities, private access to the beach, and spacious living spaces perfect for families.
+            </p>
+            <ul>
+                <li>Area: 3000 sq. ft.</li>
+                <li>Price: ₹6 Crores</li>
+                <li>Bedrooms: 4</li>
+                <li>Bathrooms: 4</li>
+            </ul>
+            <a href="/property-details/beachfront" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/vizag2int.jpg') }}" class="img-fluid rounded" alt="Harbour View Property Image 1">
+                <img src="{{ url_for('static', filename='images/vizag2.jpg') }}" class="img-fluid rounded mt-2" alt="Harbour View Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Harbour View Apartment</h3>
+            <p class="text-muted">Port Area, Vishakapatnam</p>
+            <p>
+                This 3 BHK apartment offers panoramic views of the harbour. Located in the bustling port area, this property combines modern design with easy access to the city's amenities.
+            </p>
+            <ul>
+                <li>Area: 2000 sq. ft.</li>
+                <li>Price: ₹2.5 Crores</li>
+                <li>Bedrooms: 3</li>
+                <li>Bathrooms: 3</li>
+            </ul>
+            <a href="/property-details/harbour" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/vizag3.jpg') }}" class="img-fluid rounded" alt="Penthouse Property Image 1">
+                <img src="{{ url_for('static', filename='images/vizag3int.jpg') }}" class="img-fluid rounded mt-2" alt="Penthouse Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Luxury Penthouse</h3>
+            <p class="text-muted">Dolphin Hill, Vishakapatnam</p>
+            <p>
+                This stunning penthouse on Dolphin Hill offers luxury living with modern interiors, a private terrace, and sweeping views of the city and the sea.
+            </p>
+            <ul>
+                <li>Area: 4000 sq. ft.</li>
+                <li>Price: ₹8 Crores</li>
+                <li>Bedrooms: 5</li>
+                <li>Bathrooms: 5</li>
+            </ul>
+            <a href="/property-details/penthouse" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/prop_vizag" class="btn btn-secondary">View All Vishakapatnam Properties</a>
+    </div>
+</div>
+{%endblock%}

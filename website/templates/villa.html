@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% block title %}Villas Across India{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/villa.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Villas Across India</h1>
+
+    
+    <div class="row villas-grid">
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa1.jpg') }}" class="img-fluid rounded" alt="Mumbai Villa">
+                <img src="{{ url_for('static', filename='images/villa1int.jpeg') }}" class="img-fluid rounded mt-2" alt="Mumbai Villa Interior">
+            </div>
+            <h3>Mumbai Coastal Villa</h3>
+            <p class="text-muted">Mumbai, Maharashtra</p>
+            <p>A stunning villa with a panoramic sea view, located in the heart of Mumbai's coastal area.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('mumbai_villa')">More Details</button>
+            <div id="mumbai_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4500 sq. ft.</li>
+                    <li>Price: ₹15 Crores</li>
+                    <li>Bedrooms: 5</li>
+                    <li>Bathrooms: 6</li>
+                    <li>Private Pool: Yes</li>
+                    <li>Garden: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('mumbai_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa2.jpg') }}" class="img-fluid rounded" alt="Delhi Villa">
+                <img src="{{ url_for('static', filename='images/villa2int.jpeg') }}" class="img-fluid rounded mt-2" alt="Delhi Villa Interior">
+            </div>
+            <h3>Elegant Villa in Delhi</h3>
+            <p class="text-muted">Delhi</p>
+            <p>Luxurious villa with contemporary design located in the upscale area of Delhi.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('delhi_villa')">More Details</button>
+            <div id="delhi_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4000 sq. ft.</li>
+                    <li>Price: ₹12 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 5</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Parking: 3 slots</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('delhi_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa3.jpg') }}" class="img-fluid rounded" alt="Bangalore Villa">
+                <img src="{{ url_for('static', filename='images/villa3int.jpeg') }}" class="img-fluid rounded mt-2" alt="Bangalore Villa Interior">
+            </div>
+            <h3>Modern Villa in Bangalore</h3>
+            <p class="text-muted">Bangalore, Karnataka</p>
+            <p>Contemporary villa with smart home features, located in a serene area of Bangalore.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('bangalore_villa')">More Details</button>
+            <div id="bangalore_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3500 sq. ft.</li>
+                    <li>Price: ₹9 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Home Automation: Yes</li>
+                    <li>Swimming Pool: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('bangalore_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa4.jpg') }}" class="img-fluid rounded" alt="Chennai Villa">
+                <img src="{{ url_for('static', filename='images/villa4int.jpeg') }}" class="img-fluid rounded mt-2" alt="Chennai Villa Interior">
+            </div>
+            <h3>Chennai Beachside Villa</h3>
+            <p class="text-muted">Chennai, Tamil Nadu</p>
+            <p>Exclusive beachside villa with modern amenities and direct access to the beach.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('chennai_villa')">More Details</button>
+            <div id="chennai_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4000 sq. ft.</li>
+                    <li>Price: ₹11 Crores</li>
+                    <li>Bedrooms: 5</li>
+                    <li>Bathrooms: 5</li>
+                    <li>Beach Access: Yes</li>
+                    <li>Private Pool: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('chennai_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa5.jpg') }}" class="img-fluid rounded" alt="Hyderabad Villa">
+                <img src="{{ url_for('static', filename='images/villa5int.jpeg') }}" class="img-fluid rounded mt-2" alt="Hyderabad Villa Interior">
+            </div>
+            <h3>Spacious Villa in Hyderabad</h3>
+            <p class="text-muted">Hyderabad, Telangana</p>
+            <p>A grand villa with expansive spaces and top-notch facilities, located in the peaceful suburbs of Hyderabad.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('hyderabad_villa')">More Details</button>
+            <div id="hyderabad_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 5000 sq. ft.</li>
+                    <li>Price: ₹13 Crores</li>
+                    <li>Bedrooms: 6</li>
+                    <li>Bathrooms: 6</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Gym: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('hyderabad_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa6.jpg') }}" class="img-fluid rounded" alt="Pune Villa">
+                <img src="{{ url_for('static', filename='images/villa6int.jpeg') }}" class="img-fluid rounded mt-2" alt="Pune Villa Interior">
+            </div>
+            <h3>Luxury Villa in Pune</h3>
+            <p class="text-muted">Pune, Maharashtra</p>
+            <p>Exquisite villa with luxury finishes, situated in a prime area of Pune.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('pune_villa')">More Details</button>
+            <div id="pune_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3600 sq. ft.</li>
+                    <li>Price: ₹10 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Private Pool: Yes</li>
+                    <li>Parking: 3 slots</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('pune_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa7.jpg') }}" class="img-fluid rounded" alt="Kolkata Villa">
+                <img src="{{ url_for('static', filename='images/villa7int.jpeg') }}" class="img-fluid rounded mt-2" alt="Kolkata Villa Interior">
+            </div>
+            <h3>Elegant Villa in Kolkata</h3>
+            <p class="text-muted">Kolkata, West Bengal</p>
+            <p>Elegant and spacious villa located in one of the most sought-after neighborhoods in Kolkata.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('kolkata_villa')">More Details</button>
+            <div id="kolkata_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4200 sq. ft.</li>
+                    <li>Price: ₹14 Crores</li>
+                    <li>Bedrooms: 5</li>
+                    <li>Bathrooms: 5</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Library: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('kolkata_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa8.jpg') }}" class="img-fluid rounded" alt="Ahmedabad Villa">
+                <img src="{{ url_for('static', filename='images/villa8int.jpeg') }}" class="img-fluid rounded mt-2" alt="Ahmedabad Villa Interior">
+            </div>
+            <h3>Charming Villa in Ahmedabad</h3>
+            <p class="text-muted">Ahmedabad, Gujarat</p>
+            <p>A charming villa with traditional architecture and modern amenities, located in Ahmedabad.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('ahmedabad_villa')">More Details</button>
+            <div id="ahmedabad_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3800 sq. ft.</li>
+                    <li>Price: ₹9 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Private Pool: Yes</li>
+                    <li>Garden: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('ahmedabad_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa9.jpg') }}" class="img-fluid rounded" alt="Jaipur Villa">
+                <img src="{{ url_for('static', filename='images/villa9int.jpeg') }}" class="img-fluid rounded mt-2" alt="Jaipur Villa Interior">
+            </div>
+            <h3>Luxury Villa in Jaipur</h3>
+            <p class="text-muted">Jaipur, Rajasthan</p>
+            <p>Luxury villa with royal architecture and modern amenities in Jaipur.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('jaipur_villa')">More Details</button>
+            <div id="jaipur_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 5000 sq. ft.</li>
+                    <li>Price: ₹16 Crores</li>
+                    <li>Bedrooms: 6</li>
+                    <li>Bathrooms: 6</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Parking: 4 slots</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('jaipur_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa10.jpg') }}" class="img-fluid rounded" alt="Goa Villa">
+                <img src="{{ url_for('static', filename='images/villa10int.jpeg') }}" class="img-fluid rounded mt-2" alt="Goa Villa Interior">
+            </div>
+            <h3>Beachfront Villa in Goa</h3>
+            <p class="text-muted">Goa</p>
+            <p>Beachfront villa with direct access to the sandy shores and panoramic ocean views.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('goa_villa')">More Details</button>
+            <div id="goa_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4200 sq. ft.</li>
+                    <li>Price: ₹12 Crores</li>
+                    <li>Bedrooms: 5</li>
+                    <li>Bathrooms: 5</li>
+                    <li>Beach Access: Yes</li>
+                    <li>Private Pool: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('goa_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa11.jpg') }}" class="img-fluid rounded" alt="Surat Villa">
+                <img src="{{ url_for('static', filename='images/villa11int.jpeg') }}" class="img-fluid rounded mt-2" alt="Surat Villa Interior">
+            </div>
+            <h3>Modern Villa in Surat</h3>
+            <p class="text-muted">Surat, Gujarat</p>
+            <p>Modern villa with cutting-edge design and luxurious features located in Surat.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('surat_villa')">More Details</button>
+            <div id="surat_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3500 sq. ft.</li>
+                    <li>Price: ₹8 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Home Automation: Yes</li>
+                    <li>Private Pool: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('surat_villa')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 villa-item">
+            <div class="villa-images">
+                <img src="{{ url_for('static', filename='images/villa12.jpg') }}" class="img-fluid rounded" alt="Chandigarh Villa">
+                <img src="{{ url_for('static', filename='images/villa12int.jpeg') }}" class="img-fluid rounded mt-2" alt="Chandigarh Villa Interior">
+            </div>
+            <h3>Charming Villa in Chandigarh</h3>
+            <p class="text-muted">Chandigarh</p>
+            <p>Charming villa with a blend of modern and traditional architecture, situated in Chandigarh.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('chandigarh_villa')">More Details</button>
+            <div id="chandigarh_villa" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 4000 sq. ft.</li>
+                    <li>Price: ₹10 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 5</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Library: Yes</li>
+                    <li>More Details and rent Info:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('chandigarh_villa')">Less Details</button>
+            </div>
+        </div>
+ </div>
+
+<script>
+function toggleDetails(id) {
+    var details = document.getElementById(id);
+    if (details.style.display === "none") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

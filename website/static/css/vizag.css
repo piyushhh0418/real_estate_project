@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Header */
+h1 {
+    font-size: 3rem;
+    color: #ff5733;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+/* Property Listing */
+.property-listing {
+    background-color: #fff;
+    border: 2px solid #ffa07a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.property-listing:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Property Title */
+h3 {
+    font-size: 1.8rem;
+    color: #1e90ff;
+}
+
+.text-muted {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Property Description */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    color: #2f4f4f;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+/* Buttons */
+a.btn-primary {
+    background-color: #ff6347;
+    border-color: #ff4500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-primary:hover {
+    background-color: #ff4500;
+    border-color: #ff6347;
+    transform: scale(1.05);
+}
+
+a.btn-secondary {
+    background-color: #32cd32;
+    border-color: #228b22;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+a.btn-secondary:hover {
+    background-color: #228b22;
+    border-color: #32cd32;
+}
+
+/* Property Images */
+.property-images img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.property-images img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .property-listing {
+        padding: 15px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 8px 15px;
+    }
+}

@@ -1,0 +1,183 @@
+/* Hero Section */
+.hero-section {
+    background-image: url('../images/home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for more contrast */
+    transition: background 0.5s ease; /* Smooth transition for overlay */
+}
+
+.hero-section:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}
+
+.hero-section h1 {
+    font-size: 4rem; /* Increased font size for better visibility */
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideInDown 0.8s ease forwards; /* Added slide-in animation */
+}
+
+.hero-section p.lead {
+    font-size: 1.6rem; /* Slightly larger font size */
+    margin-bottom: 30px;
+    color: #dcdcdc;
+}
+
+.hero-section .btn-primary {
+    background-color: #ff6f61;
+    border: none; /* Removed border for a cleaner look */
+    padding: 12px 35px; /* Increased padding */
+    font-size: 1.3rem; /* Larger font size */
+    border-radius: 30px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #e95c50;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Keyframes for animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* About Section */
+.about-section {
+    background: linear-gradient(135deg, #f9fafb 0%, #e0e7ee 100%); /* Gradient background */
+    padding: 60px 20px; /* Responsive padding */
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.about-section h2 {
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 25px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* More spacing for elegance */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.about-section img {
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Locations Section */
+.locations-section {
+    padding: 50px 20px; /* Responsive padding */
+    background-color: #f0f8ff;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.locations-section h2 {
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 30px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* More spacing for elegance */
+}
+
+.location-img {
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-img:hover {
+    transform: scale(1.1); /* Slightly less scale for a subtle effect */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.locations-section h4 {
+    font-size: 2rem; /* Increased font size */
+    margin-top: 15px;
+    color: #ff6f61;
+    text-transform: capitalize;
+}
+
+.locations-section p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Icons with FontAwesome */
+.about-section h2::before, 
+.locations-section h2::before {
+    content: "\f015"; /* FontAwesome Icon */
+    font-family: FontAwesome;
+    margin-right: 12px;
+    color: #ff6f61;
+    font-size: 1.5rem;
+}
+
+.hero-section h1::before {
+    content: "\f1ad"; /* FontAwesome Icon */
+    font-family: FontAwesome;
+    margin-right: 15px;
+    color: #ff6f61;
+    font-size: 2rem; /* Increased icon size */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem; /* Smaller font size on mobile */
+    }
+
+    .hero-section p.lead {
+        font-size: 1.2rem; /* Smaller font size on mobile */
+    }
+
+    .about-section h2, .locations-section h2 {
+        font-size: 2.5rem; /* Smaller font size on mobile */
+    }
+
+    .location-img {
+        width: 150px; /* Smaller size on mobile */
+        height: 150px; /* Smaller size on mobile */
+    }
+}

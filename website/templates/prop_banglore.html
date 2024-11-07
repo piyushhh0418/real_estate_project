@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}More Bangalore Properties{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+
+<div class="container">
+    <!-- Property 1 -->
+    <div class="property-box" id="property-box-1">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore1.jpg') }}" alt="Property 1">
+        <div class="property-info">
+            <div class="property-title">Luxury Villa</div>
+            <div class="property-location">Whitefield, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-1" style="display: none;">
+            <h2>Luxury Villa</h2>
+            <p>Location: Whitefield, Bangalore</p>
+            <p>Price: ₹4 Crore</p>
+            <p>Description: A premium villa with a private garden, pool, and modern amenities located in the Whitefield area, close to IT hubs.</p>
+            <button onclick="toggleDetails(1)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="property-box" id="property-box-2">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore2.jpg') }}" alt="Property 2">
+        <div class="property-info">
+            <div class="property-title">Modern Apartment</div>
+            <div class="property-location">Indiranagar, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-2" style="display: none;">
+            <h2>Modern Apartment</h2>
+            <p>Location: Indiranagar, Bangalore</p>
+            <p>Price: ₹1.2 Crore</p>
+            <p>Description: A stylish 2 BHK apartment located in the vibrant Indiranagar area, close to shopping centers and metro stations.</p>
+            <button onclick="toggleDetails(2)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="property-box" id="property-box-3">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore3.jpg') }}" alt="Property 3">
+        <div class="property-info">
+            <div class="property-title">Budget Flat</div>
+            <div class="property-location">Jayanagar, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-3" style="display: none;">
+            <h2>Budget Flat</h2>
+            <p>Location: Jayanagar, Bangalore</p>
+            <p>Price: ₹75 Lakhs</p>
+            <p>Description: A budget-friendly 2 BHK flat in Jayanagar with excellent access to schools, parks, and public transport.</p>
+            <button onclick="toggleDetails(3)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 4 -->
+    <div class="property-box" id="property-box-4">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore4.jpg') }}" alt="Property 4">
+        <div class="property-info">
+            <div class="property-title">Penthouse Apartment</div>
+            <div class="property-location">Koramangala, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-4" style="display: none;">
+            <h2>Penthouse Apartment</h2>
+            <p>Location: Koramangala, Bangalore</p>
+            <p>Price: ₹5 Crore</p>
+            <p>Description: A luxurious penthouse with rooftop access, stunning views, and located in the bustling Koramangala neighborhood.</p>
+            <button onclick="toggleDetails(4)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 5 -->
+    <div class="property-box" id="property-box-5">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore5.jpg') }}" alt="Property 5">
+        <div class="property-info">
+            <div class="property-title">Eco-Friendly Villa</div>
+            <div class="property-location">Yelahanka, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-5" style="display: none;">
+            <h2>Eco-Friendly Villa</h2>
+            <p>Location: Yelahanka, Bangalore</p>
+            <p>Price: ₹3.5 Crore</p>
+            <p>Description: An eco-friendly villa with solar panels, rainwater harvesting systems, and a green lawn located in Yelahanka.</p>
+            <button onclick="toggleDetails(5)">Close</button>
+        </div>
+    </div>
+
+    <!-- Property 6 -->
+    <div class="property-box" id="property-box-6">
+        <img class="property-image" src="{{ url_for('static', filename='images/bangalore6.jpg') }}" alt="Property 6">
+        <div class="property-info">
+            <div class="property-title">Studio Apartment</div>
+            <div class="property-location">Electronic City, Bangalore</div>
+            <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+        </div>
+        <div class="expanded-details" id="expanded-details-6" style="display: none;">
+            <h2>Studio Apartment</h2>
+            <p>Location: Electronic City, Bangalore</p>
+            <p>Price: ₹50 Lakhs</p>
+            <p>Description: A compact studio apartment ideal for IT professionals, located in the tech hub of Electronic City.</p>
+            <button onclick="toggleDetails(6)">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    }
+</script>
+
+{% endblock %}

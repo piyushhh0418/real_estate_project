@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}More Properties Vishakapatnam{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+
+<!-- Property 1 -->
+<div class="property-box" id="property-box-1">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag1.jpg') }}" alt="Property 1">
+    <div class="property-info">
+        <div class="property-title">Beachside Villa</div>
+        <div class="property-location">Rushikonda, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-1" style="display: none;">
+        <h2>Beachside Villa</h2>
+        <p>Location: Rushikonda, Vishakapatnam</p>
+        <p>Price: ₹5 Crore</p>
+        <p>Description: A luxurious beachside villa offering stunning views of the sea, with a private pool and garden.</p>
+        <button onclick="toggleDetails(1)">Close</button>
+    </div>
+</div>
+
+<!-- Property 2 -->
+<div class="property-box" id="property-box-2">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag2.jpg') }}" alt="Property 2">
+    <div class="property-info">
+        <div class="property-title">Modern 2 BHK Apartment</div>
+        <div class="property-location">MVP Colony, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-2" style="display: none;">
+        <h2>Modern 2 BHK Apartment</h2>
+        <p>Location: MVP Colony, Vishakapatnam</p>
+        <p>Price: ₹75 Lakhs</p>
+        <p>Description: A spacious 2 BHK apartment with modern amenities, located in the heart of the city with easy access to schools and shopping centers.</p>
+        <button onclick="toggleDetails(2)">Close</button>
+    </div>
+</div>
+
+<!-- Property 3 -->
+<div class="property-box" id="property-box-3">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag3.jpg') }}" alt="Property 3">
+    <div class="property-info">
+        <div class="property-title">Luxury Penthouse</div>
+        <div class="property-location">Waltair Uplands, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-3" style="display: none;">
+        <h2>Luxury Penthouse</h2>
+        <p>Location: Waltair Uplands, Vishakapatnam</p>
+        <p>Price: ₹3 Crore</p>
+        <p>Description: A premium 3 BHK penthouse with a terrace offering panoramic views of the city, perfect for a luxurious lifestyle.</p>
+        <button onclick="toggleDetails(3)">Close</button>
+    </div>
+</div>
+
+<!-- Property 4 -->
+<div class="property-box" id="property-box-4">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag4.jpg') }}" alt="Property 4">
+    <div class="property-info">
+        <div class="property-title">Independent House</div>
+        <div class="property-location">Seethammadhara, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-4" style="display: none;">
+        <h2>Independent House</h2>
+        <p>Location: Seethammadhara, Vishakapatnam</p>
+        <p>Price: ₹1.5 Crore</p>
+        <p>Description: A spacious 4 BHK independent house located in a serene neighborhood, ideal for families seeking privacy.</p>
+        <button onclick="toggleDetails(4)">Close</button>
+    </div>
+</div>
+
+<!-- Property 5 -->
+<div class="property-box" id="property-box-5">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag5.jpg') }}" alt="Property 5">
+    <div class="property-info">
+        <div class="property-title">Affordable 1 BHK Flat</div>
+        <div class="property-location">Gajuwaka, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-5" style="display: none;">
+        <h2>Affordable 1 BHK Flat</h2>
+        <p>Location: Gajuwaka, Vishakapatnam</p>
+        <p>Price: ₹45 Lakhs</p>
+        <p>Description: A compact and affordable 1 BHK flat, perfect for first-time homeowners, located in a well-connected area.</p>
+        <button onclick="toggleDetails(5)">Close</button>
+    </div>
+</div>
+
+<!-- Property 6 -->
+<div class="property-box" id="property-box-6">
+    <img class="property-image" src="{{ url_for('static', filename='images/vizag6.jpg') }}" alt="Property 6">
+    <div class="property-info">
+        <div class="property-title">3 BHK in a Gated Community</div>
+        <div class="property-location">Madhurawada, Vishakapatnam</div>
+        <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-6" style="display: none;">
+        <h2>3 BHK in a Gated Community</h2>
+        <p>Location: Madhurawada, Vishakapatnam</p>
+        <p>Price: ₹1 Crore</p>
+        <p>Description: A 3 BHK apartment in a gated community with amenities like a clubhouse, swimming pool, and playground.</p>
+        <button onclick="toggleDetails(6)">Close</button>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+{% endblock %}

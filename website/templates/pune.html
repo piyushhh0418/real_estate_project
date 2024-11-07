@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Pune Properties{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Pune</h1>
+
+    <!-- Property 1: Baner -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/baner1.jpg') }}" class="img-fluid rounded" alt="Baner Property Image 1">
+                <img src="{{ url_for('static', filename='images/baner1int.jpg') }}" class="img-fluid rounded mt-2" alt="Baner Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Luxurious Apartment in Baner</h3>
+            <p class="text-muted">Baner, Pune</p>
+            <p>
+                Located in the upscale area of Baner, this 3 BHK apartment offers modern amenities, spacious rooms, and a stunning city view. Ideal for families looking for a premium lifestyle.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('baner')">More Details</button>
+            <div id="baner" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1800 sq. ft.</li>
+                    <li>Price: ₹3.5 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Parking: 2 slots</li>
+                    <li>Swimming Pool: Yes</li>
+
+                    <li>Gym: Yes</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('baner')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 2: Koregaon Park -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/kp1.jpg') }}" class="img-fluid rounded" alt="Koregaon Park Property Image 1">
+                <img src="{{ url_for('static', filename='images/kp1int.jpg') }}" class="img-fluid rounded mt-2" alt="Koregaon Park Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Elegant Villa in Koregaon Park</h3>
+            <p class="text-muted">Koregaon Park, Pune</p>
+            <p>
+                A beautiful 4 BHK villa in the prestigious Koregaon Park area, featuring a private garden, modern interiors, and close proximity to the city's best cafes and restaurants.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('koregaon')">More Details</button>
+            <div id="koregaon" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3500 sq. ft.</li>
+                    <li>Price: ₹7 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Proximity to Restaurants: 5 mins walk</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('koregaon')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 3: Hinjawadi -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/hinjewadi.jpg') }}" class="img-fluid rounded" alt="Hinjawadi Property Image 1">
+                <img src="{{ url_for('static', filename='images/hinjewadiint.jpg') }}" class="img-fluid rounded mt-2" alt="Hinjawadi Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Modern Apartment in Hinjawadi</h3>
+            <p class="text-muted">Hinjawadi, Pune</p>
+            <p>
+                This modern 2 BHK apartment in the IT hub of Hinjawadi is perfect for professionals. It offers a convenient location, contemporary design, and all the necessary amenities.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('hinjawadi')">More Details</button>
+            <div id="hinjawadi" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1200 sq. ft.</li>
+                    <li>Price: ₹1.8 Crores</li>
+                    <li>Bedrooms: 2</li>
+                    <li>Bathrooms: 2</li>
+                    <li>Gym: Yes</li>
+                    <li>Power Backup: Yes</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('hinjawadi')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View All Properties Button -->
+    <div class="text-center mt-5">
+        <a href="{{ url_for('views.pune_etc') }}" class="btn btn-secondary">View All Pune Properties</a>
+    </div>
+</div>
+
+<!-- JavaScript to toggle the details -->
+<script>
+function toggleDetails(id) {
+    var details = document.getElementById(id);
+    if (details.style.display === "none") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

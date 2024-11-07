@@ -1,0 +1,123 @@
+{% extends "base.html"%}{%block title%}More Properties Hyderabad{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pune_etc.css') }}">
+<!-- Property 1 -->
+<div class="property-box" id="property-box-1">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad1.jpg') }}" alt="Property 1">
+    <div class="property-info">
+        <div class="property-title">Modern 3 BHK Apartment</div>
+        <div class="property-location">Gachibowli, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(1)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-1" style="display: none;">
+        <h2>Modern 3 BHK Apartment</h2>
+        <p>Location: Gachibowli, Hyderabad</p>
+        <p>Price: ₹1.2 Crore</p>
+        <p>Description: A spacious 3 BHK apartment located in the IT hub of Gachibowli, with proximity to major companies and educational institutions.</p>
+        <button onclick="toggleDetails(1)">Close</button>
+    </div>
+</div>
+
+<!-- Property 2 -->
+<div class="property-box" id="property-box-2">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad2.jpg') }}" alt="Property 2">
+    <div class="property-info">
+        <div class="property-title">Luxury Villa</div>
+        <div class="property-location">Banjara Hills, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(2)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-2" style="display: none;">
+        <h2>Luxury Villa</h2>
+        <p>Location: Banjara Hills, Hyderabad</p>
+        <p>Price: ₹8 Crore</p>
+        <p>Description: A luxurious 4 BHK villa in the prime area of Banjara Hills, offering premium interiors and a private garden.</p>
+        <button onclick="toggleDetails(2)">Close</button>
+    </div>
+</div>
+
+
+<div class="property-box" id="property-box-3">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad3.jpg') }}" alt="Property 3">
+    <div class="property-info">
+        <div class="property-title">Affordable 2 BHK Flat</div>
+        <div class="property-location">Kukatpally, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(3)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-3" style="display: none;">
+        <h2>Affordable 2 BHK Flat</h2>
+        <p>Location: Kukatpally, Hyderabad</p>
+        <p>Price: ₹60 Lakhs</p>
+        <p>Description: A budget-friendly 2 BHK flat with modern amenities and close proximity to shopping malls and public transport.</p>
+        <button onclick="toggleDetails(3)">Close</button>
+    </div>
+</div>
+
+
+<div class="property-box" id="property-box-4">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad4.jpg') }}" alt="Property 4">
+    <div class="property-info">
+        <div class="property-title">Independent House</div>
+        <div class="property-location">Madhapur, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(4)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-4" style="display: none;">
+        <h2>Independent House</h2>
+        <p>Location: Madhapur, Hyderabad</p>
+        <p>Price: ₹90 Lakhs</p>
+        <p>Description: A 3 BHK independent house with a private parking space and garden, located in the residential area of Madhapur.</p>
+        <button onclick="toggleDetails(4)">Close</button>
+    </div>
+</div>
+
+<!-- Property 5 -->
+<div class="property-box" id="property-box-5">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad5.jpg') }}" alt="Property 5">
+    <div class="property-info">
+        <div class="property-title">Studio Apartment</div>
+        <div class="property-location">Hitech City, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(5)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-5" style="display: none;">
+        <h2>Studio Apartment</h2>
+        <p>Location: Hitech City, Hyderabad</p>
+        <p>Price: ₹40 Lakhs</p>
+        <p>Description: A compact and modern studio apartment located near the IT hub, ideal for young professionals.</p>
+        <button onclick="toggleDetails(5)">Close</button>
+    </div>
+</div>
+
+<!-- Property 6 -->
+<div class="property-box" id="property-box-6">
+    <img class="property-image" src="{{ url_for('static', filename='images/hyderabad6.jpg') }}" alt="Property 6">
+    <div class="property-info">
+        <div class="property-title">Gated Community Apartment</div>
+        <div class="property-location">Jubilee Hills, Hyderabad</div>
+        <div class="more-details" onclick="toggleDetails(6)">More Details</div>
+    </div>
+    <div class="expanded-details" id="expanded-details-6" style="display: none;">
+        <h2>Gated Community Apartment</h2>
+        <p>Location: Jubilee Hills, Hyderabad</p>
+        <p>Price: ₹2 Crore</p>
+        <p>Description: A 3 BHK apartment in a gated community with modern amenities such as a swimming pool, gym, and clubhouse.</p>
+        <button onclick="toggleDetails(6)">Close</button>
+    </div>
+</div>
+<script>
+    function toggleDetails(propertyId) {
+        var details = document.getElementById('expanded-details-' + propertyId);
+        // Hide all other property details
+        var allDetails = document.getElementsByClassName('expanded-details');
+        for (var i = 0; i < allDetails.length; i++) {
+            if (allDetails[i].id !== 'expanded-details-' + propertyId) {
+                allDetails[i].style.display = 'none';
+            }
+        }
+        // Toggle the clicked property details
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    }
+</script>
+{%endblock%}

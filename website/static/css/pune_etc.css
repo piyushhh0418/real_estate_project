@@ -1,0 +1,114 @@
+/* Container for property grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fafafa; /* Light background color */
+}
+
+/* Property box styles */
+.property-box {
+    position: relative;
+    background-color: #f9f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e0f7fa; /* Light teal hover effect */
+}
+
+/* Property image styles */
+.property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff7043; /* Orange accent */
+}
+
+/* Property info styles */
+.property-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.property-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4a148c; /* Deep purple for title */
+}
+
+.property-location {
+    font-size: 16px;
+    color: #7b1fa2; /* Purple for location */
+    margin: 10px 0;
+}
+
+.more-details {
+    cursor: pointer;
+    color: #ff4081; /* Bright pink for more details link */
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ffc107; /* Yellow button */
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.more-details:hover {
+    background-color: #ff9800; /* Orange hover */
+    color: #fff;
+}
+
+/* Expanded details section */
+.expanded-details {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.expanded-details h2 {
+    font-size: 24px;
+    color: #d84315; /* Orange-red for title */
+}
+
+.expanded-details p {
+    font-size: 16px;
+    color: #424242;
+    margin: 10px 0;
+}
+
+/* Button styles */
+.expanded-details button {
+    background-color: #ff4081; /* Bright pink for close button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.expanded-details button:hover {
+    background-color: #d81b60; /* Darker pink for hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .property-box {
+        grid-column: span 1;
+    }
+}

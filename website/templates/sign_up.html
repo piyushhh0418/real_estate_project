@@ -1,0 +1,80 @@
+{% extends "base.html"%}
+{% block title %}SignUp{% endblock %}
+
+{% block content%}
+<form method="POST" action="{{ url_for('auth.sign_up') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="container mt-5">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/signup.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+    <h2 class="text-center">Create an Account</h2>
+    <form action="/sign-up" method="POST" class="mt-4">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">+91</span>
+                </div>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+        </div>
+        <!-- Updated password fields to match auth.py -->
+        <div class="form-group">
+            <label for="password1">New Password</label>
+            <div class="input-group">
+                <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter your password">
+                <div class="input-group-append">
+                    <span class="input-group-text" onclick="togglePassword('password1', 'togglePasswordIcon')">
+                        <i class="fa fa-eye" id="togglePasswordIcon"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <div class="input-group">
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm your password">
+                <div class="input-group-append">
+                    <span class="input-group-text" onclick="togglePassword('password2', 'toggleConfirmPasswordIcon')">
+                        <i class="fa fa-eye" id="toggleConfirmPasswordIcon"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+    </form>
+</div>
+
+
+<script>
+    // Toggle the password visibility for both password1 and password2 fields
+    function togglePassword(passwordId, iconId) {
+        const passwordField = document.getElementById(passwordId);
+        const togglePasswordIcon = document.getElementById(iconId);
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            togglePasswordIcon.classList.remove("fa-eye");
+            togglePasswordIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            togglePasswordIcon.classList.remove("fa-eye-slash");
+            togglePasswordIcon.classList.add("fa-eye");
+        }
+    }
+</script>
+{% endblock %}

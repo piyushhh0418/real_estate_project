@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/oneroom.css') }}">
+
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">1RK Properties Across India</h2>
+
+    <div class="row properties-grid">
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/ormumbai1.jpg') }}" class="img-fluid rounded" alt="1RK in Mumbai">
+                <img src="{{ url_for('static', filename='images/ormumbai.jpg') }}" class="img-fluid rounded mt-2" alt="Mumbai 1RK Interior">
+            </div>
+            <h3>1RK in Andheri, Mumbai</h3>
+            <p class="text-muted">Mumbai, Maharashtra</p>
+            <p>Compact 1RK apartment in a prime area of Andheri with basic amenities.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('mumbai_1rk')">More Details</button>
+            <div id="mumbai_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 450 sq. ft.</li>
+                    <li>Price: ₹85 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Metro: 5 mins walk</li>
+                    <li>Parking: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('mumbai_1rk')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/ordelhi1.jpg') }}" class="img-fluid rounded" alt="1RK in Delhi">
+                <img src="{{ url_for('static', filename='images/ordelhi.jpg') }}" class="img-fluid rounded mt-2" alt="Delhi 1RK Interior">
+            </div>
+            <h3>1RK in South Delhi</h3>
+            <p class="text-muted">Delhi, India</p>
+            <p>Affordable 1RK apartment in South Delhi, ideal for students and professionals.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('delhi_1rk')">More Details</button>
+            <div id="delhi_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 500 sq. ft.</li>
+                    <li>Price: ₹75 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Market: 10 mins walk</li>
+                    <li>Lift: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('delhi_1rk')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orbang.jpg') }}" class="img-fluid rounded" alt="1RK in Bangalore">
+                <img src="{{ url_for('static', filename='images/orbang1.jpg') }}" class="img-fluid rounded mt-2" alt="Bangalore 1RK Interior">
+            </div>
+            <h3>1RK in Koramangala, Bangalore</h3>
+            <p class="text-muted">Bangalore, Karnataka</p>
+            <p>Modern 1RK apartment in Bangalore’s startup hub, Koramangala.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('bangalore_1rk')">More Details</button>
+            <div id="bangalore_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 550 sq. ft.</li>
+                    <li>Price: ₹95 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to IT Park: 10 mins drive</li>
+                    <li>Parking: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('bangalore_1rk')">Less Details</button>
+            </div>
+        </div>
+
+    
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orchen.jpg') }}" class="img-fluid rounded" alt="1RK in Chennai">
+                <img src="{{ url_for('static', filename='images/orchen1.jpg') }}" class="img-fluid rounded mt-2" alt="Chennai 1RK Interior">
+            </div>
+            <h3>1RK in T. Nagar, Chennai</h3>
+            <p class="text-muted">Chennai, Tamil Nadu</p>
+            <p>Cozy 1RK in T. Nagar with all essential amenities and proximity to malls.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('chennai_1rk')">More Details</button>
+            <div id="chennai_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 480 sq. ft.</li>
+                    <li>Price: ₹60 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Shopping: 5 mins walk</li>
+                    <li>Lift: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('chennai_1rk')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orpune.jpg') }}" class="img-fluid rounded" alt="1RK in Pune">
+                <img src="{{ url_for('static', filename='images/orpune1.jpg') }}" class="img-fluid rounded mt-2" alt="Pune 1RK Interior">
+            </div>
+            <h3>1RK in Viman Nagar, Pune</h3>
+            <p class="text-muted">Pune, Maharashtra</p>
+            <p>Well-located 1RK in Viman Nagar, perfect for students and professionals.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('pune_1rk')">More Details</button>
+            <div id="pune_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 470 sq. ft.</li>
+                    <li>Price: ₹65 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Airport: 5 mins drive</li>
+                    <li>Lift: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('pune_1rk')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orhyd.jpg') }}" class="img-fluid rounded" alt="1RK in Hyderabad">
+                <img src="{{ url_for('static', filename='images/orhyd1.jpg') }}" class="img-fluid rounded mt-2" alt="Hyderabad 1RK Interior">
+            </div>
+            <h3>1RK in Gachibowli, Hyderabad</h3>
+            <p class="text-muted">Hyderabad, Telangana</p>
+            <p>1RK apartment with modern features near Hyderabad's IT corridor.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('hyderabad_1rk')">More Details</button>
+            <div id="hyderabad_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 490 sq. ft.</li>
+                    <li>Price: ₹80 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                  <li>Proximity to IT Park: 10 mins walk</li>
+                  <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('hyderabad_1rk')">Less Details</button>
+            </div>
+        </div>
+
+    
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orbp.jpg') }}" class="img-fluid rounded" alt="1RK in Bhopal">
+                <img src="{{ url_for('static', filename='images/orbp1.jpg') }}" class="img-fluid rounded mt-2" alt="Bhopal 1RK Interior">
+            </div>
+            <h3>1RK in Arera Colony, Bhopal</h3>
+            <p class="text-muted">Bhopal, Madhya Pradesh</p>
+            <p>Nice 1RK in Arera Colony, offering a calm and peaceful environment.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('bhopal_1rk')">More Details</button>
+            <div id="bhopal_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 470 sq. ft.</li>
+                    <li>Price: ₹40 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Market: 10 mins walk</li>
+                    <li>Lift: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('bhopal_1rk')">Less Details</button>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 property-item">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/orind.jpg') }}" class="img-fluid rounded" alt="1RK in Indore">
+                <img src="{{ url_for('static', filename='images/orind1.jpg') }}" class="img-fluid rounded mt-2" alt="Indore 1RK Interior">
+            </div>
+            <h3>1RK in Vijay Nagar, Indore</h3>
+            <p class="text-muted">Indore, Madhya Pradesh</p>
+            <p>Convenient 1RK in Vijay Nagar, close to educational institutions and markets.</p>
+            <button class="btn btn-primary" onclick="toggleDetails('indore_1rk')">More Details</button>
+            <div id="indore_1rk" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 460 sq. ft.</li>
+                    <li>Price: ₹35 Lakhs</li>
+                    <li>Bedrooms: 1</li>
+                    <li>Bathrooms: 1</li>
+                    <li>Proximity to Market: 5 mins walk</li>
+                    <li>Parking: Yes</li>
+                    <li>More details or Rent:Call-1234567890</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('indore_1rk')">Less Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(id) {
+        var details = document.getElementById(id);
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+        } else {
+            details.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

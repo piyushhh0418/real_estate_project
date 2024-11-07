@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Welcome to NOBROKER Estate</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="collapse navbar-collapse" id="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Real Estate" class="navbar-logo">
+                NOBROKER ESTATE
+            </a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" id="login" href="{{ url_for('auth.login') }}">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a class="nav-item nav-link" id="sign_up" href="{{ url_for('auth.sign_up') }}">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background image container -->
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <div class="container text-center">
+                <h1>Welcome to NOBROKER Estate</h1>
+                <p>Finding your dream home has never been easier. Explore, buy, or rent properties across major cities in India without any brokerage!</p>
+                <div class="mt-4">
+                    <a href="{{ url_for('auth.sign_up') }}" class="btn btn-success btn-lg">Get Started</a>
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Features section -->
+    <section class="features py-5 text-center">
+      <div class="container">
+        <h2>Why Choose Us?</h2>
+        <p class="lead">We make real estate transactions easy, fast, and transparent for everyone.</p>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <i class="fas fa-building fa-3x mb-3"></i>
+            <h4>Wide Selection of Properties</h4>
+            <p>Find the perfect property in cities like Mumbai, Delhi, Bangalore, and more.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-hands-helping fa-3x mb-3"></i>
+            <h4>No Broker Fees</h4>
+            <p>We connect you directly with property owners. No hidden fees or commissions.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+            <h4>Find Homes Near You</h4>
+            <p>Discover properties in your preferred location with our city-based listings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7H9e39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Base{% endblock %}</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}"> 
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                {% if request.endpoint in ['auth.login', 'auth.sign_up'] %}
+                    <span class="navbar-brand">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Real Estate" class="navbar-logo">
+                        NOBROKER ESTATE
+                    </span>
+                {% else %}
+                    <a class="navbar-brand" href="{{ url_for('views.home') }}">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Real Estate" class="navbar-logo">
+                        NOBROKER ESTATE
+                    </a>
+
+                    <a class="nav-item nav-link" href="{{ url_for('views.properties') }}">
+                        <i class="fas fa-home"></i> Properties
+                    </a>
+                    
+                    {% if current_user.is_authenticated and current_user.properties|length > 0 %}
+                        <a class="nav-item nav-link" href="{{ url_for('views.my_properties') }}">
+                            My Properties
+                        </a>
+                    {% endif %}
+                    
+                    <form id="search-form" class="form-inline ml-auto" onsubmit="return searchRedirect()">
+                        <input type="text" id="search-input" class="form-control mr-sm-2" placeholder="Search properties...">
+                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+
+                    <div class="navbar-nav ml-3">
+                        {% if current_user.is_authenticated %}
+                            <div class="user-info">
+                                <i class="fa fa-user"></i> {{ current_user.first_name }}
+                            </div>
+                            <a class="nav-item nav-link ml-2" href="{{ url_for('auth.logout') }}">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        {% else %}
+                            <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                            <a class="nav-item nav-link" href="{{ url_for('auth.sign_up') }}">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function searchRedirect() {
+            let query = document.getElementById("search-input").value.toLowerCase();
+            switch(query) {
+                case 'pune':
+                    window.location.href = '/pune';
+                    break;
+                case 'mumbai':
+                    window.location.href = "/mumbai";
+                    break;
+                case 'delhi':
+                    window.location.href = "/delhi";
+                    break;
+                case 'bangalore':
+                    window.location.href = "/bangalore";
+                    break;
+                case 'villa':
+                    window.location.href = "/villa";
+                    break;
+                case 'apartment':
+                    window.location.href = "/apartment";
+                    break;
+                case 'oneroom':
+                    window.location.href = "/oneroom";
+                    break;
+                default:
+                    alert('No properties found for "' + query + '". Please try another location.');
+                    break;
+            }
+            return false;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    {% if request.endpoint not in ['auth.login', 'auth.sign_up'] %}
+    <div class="chatbot">
+        <img src="{{ url_for('static', filename='images/chatbot.jpg') }}" alt="Chatbot Icon" class="bot-icon">
+    </div>
+
+    <div class="chat-window" style="display: none;">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-chat">&times;</button>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="Ask something...">
+            <button class="chat-send">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    {% endif %}
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Go Back Button -->
+    {% if request.endpoint != 'views.home' %}
+    <div class="go-back-container">
+        <button class="go-back-button" onclick="goBack()">Go Back</button>
+    </div>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Ahmedabad Properties{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ahmedabad.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Ahmedabad</h1>
+
+    <!-- Property 1: Navrangpura -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/navrangpura1.jpg') }}" class="img-fluid rounded" alt="Navrangpura Property Image 1">
+                <img src="{{ url_for('static', filename='images/navrangpura1int.jpg') }}" class="img-fluid rounded mt-2" alt="Navrangpura Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Elegant Apartment in Navrangpura</h3>
+            <p class="text-muted">Navrangpura, Ahmedabad</p>
+            <p>
+                This sophisticated 3 BHK apartment in Navrangpura offers luxurious living with modern amenities and a prime location.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('navrangpura')">More Details</button>
+            <div id="navrangpura" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 2000 sq. ft.</li>
+                    <li>Price: ₹4 Crores</li>
+                    <li>Bedrooms: 3</li>
+                    <li>Bathrooms: 3</li>
+                    <li>Parking: 2 slots</li>
+                    <li>Gym: Yes</li>
+                    <li>Swimming Pool: Yes</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('navrangpura')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 2: SG Highway -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/sg_highway1.jpg') }}" class="img-fluid rounded" alt="SG Highway Property Image 1">
+                <img src="{{ url_for('static', filename='images/sg_highway1int.jpg') }}" class="img-fluid rounded mt-2" alt="SG Highway Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Luxury Villa on SG Highway</h3>
+            <p class="text-muted">SG Highway, Ahmedabad</p>
+            <p>
+                An exquisite 4 BHK villa on SG Highway featuring a private garden, pool, and high-end amenities.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('sg_highway')">More Details</button>
+            <div id="sg_highway" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 3500 sq. ft.</li>
+                    <li>Price: ₹8 Crores</li>
+                    <li>Bedrooms: 4</li>
+                    <li>Bathrooms: 4</li>
+                    <li>Private Garden: Yes</li>
+                    <li>Swimming Pool: Yes</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('sg_highway')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 3: Bopal -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <div class="property-images">
+                <img src="{{ url_for('static', filename='images/bopal1.jpg') }}" class="img-fluid rounded" alt="Bopal Property Image 1">
+                <img src="{{ url_for('static', filename='images/bopal1int.jpg') }}" class="img-fluid rounded mt-2" alt="Bopal Property Image 2">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h3>Modern Apartment in Bopal</h3>
+            <p class="text-muted">Bopal, Ahmedabad</p>
+            <p>
+                A contemporary 2 BHK apartment in Bopal, offering a blend of comfort and convenience.
+            </p>
+            <button class="btn btn-primary" onclick="toggleDetails('bopal')">More Details</button>
+            <div id="bopal" class="more-details" style="display: none;">
+                <ul>
+                    <li>Area: 1400 sq. ft.</li>
+                    <li>Price: ₹2.5 Crores</li>
+                    <li>Bedrooms: 2</li>
+                    <li>Bathrooms: 2</li>
+                    <li>Parking: 1 slot</li>
+                    <li>Gym: Yes</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="toggleDetails('bopal')">Less Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View All Properties Button -->
+    <div class="text-center mt-5">
+        <a href="{{ url_for('views.prop_ahmedabad') }}" class="btn btn-secondary">View All Ahmedabad Properties</a>
+    </div>
+</div>
+
+<!-- JavaScript to toggle the details -->
+<script>
+function toggleDetails(id) {
+    var details = document.getElementById(id);
+    if (details.style.display === "none") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

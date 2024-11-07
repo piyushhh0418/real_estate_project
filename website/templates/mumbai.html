@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Mumbai Properties{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mumbai.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Mumbai</h1>
+
+    <!-- Property 1 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGFwYXJ0bWVudHxlbnwwfHx8fDE2MTY5NDUxMzk&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded" alt="Property 1">
+        </div>
+        <div class="col-md-7">
+            <h3>Luxurious Apartment in South Mumbai</h3>
+            <p class="text-muted">Marine Drive, Mumbai</p>
+            <p>
+                This stunning 3 BHK apartment offers a breathtaking sea view, modern amenities, and is located in the heart of South Mumbai. Perfect for those who seek luxury and convenience.
+            </p>
+            <ul>
+                <li>Area: 2000 sq. ft.</li>
+                <li>Price: ₹5 Crores</li>
+                <li>Bedrooms: 3</li>
+                <li>Bathrooms: 3</li>
+            </ul>
+            <button class="btn btn-primary" id="property1-btn" onclick="toggleDetails('property1-details', 'property1-btn')">More Details</button>
+            <div id="property1-details" class="more-details" style="display: none;">
+                <p>This apartment comes with a fully equipped gym, dedicated parking, and 24/7 security services. It is ideal for those looking for a luxurious and secure living environment in one of Mumbai's most prestigious areas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGFwYXJ0bWVudHxlbnwwfHx8fDE2MTY5NDUxMzk&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded" alt="Property 2">
+        </div>
+        <div class="col-md-7">
+            <h3>Spacious 2 BHK in Andheri</h3>
+            <p class="text-muted">Andheri West, Mumbai</p>
+            <p>
+                Located in a prime locality, this 2 BHK apartment is ideal for small families. It comes with ample natural light, a modular kitchen, and easy access to major transport hubs.
+            </p>
+            <ul>
+                <li>Area: 1200 sq. ft.</li>
+                <li>Price: ₹2.5 Crores</li>
+                <li>Bedrooms: 2</li>
+                <li>Bathrooms: 2</li>
+            </ul>
+            <button class="btn btn-primary" id="property2-btn" onclick="toggleDetails('property2-details', 'property2-btn')">More Details</button>
+            <div id="property2-details" class="more-details" style="display: none;">
+                <p>This apartment is within walking distance from the Andheri metro station, making it a great location for those working in and around the area. The building also has a community hall and kids' play area.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/hinjewadi.jpg') }}" class="img-fluid rounded" alt="Property 3">
+        </div>
+        <div class="col-md-7">
+            <h3>Modern Villa in Juhu</h3>
+            <p class="text-muted">Juhu, Mumbai</p>
+            <p>
+                This luxurious villa is located in the posh area of Juhu. It offers a private garden, a swimming pool, and state-of-the-art interiors. Ideal for those seeking privacy and elegance.
+            </p>
+            <ul>
+                <li>Area: 3500 sq. ft.</li>
+                <li>Price: ₹10 Crores</li>
+                <li>Bedrooms: 4</li>
+                <li>Bathrooms: 4</li>
+            </ul>
+            <button class="btn btn-primary" id="property3-btn" onclick="toggleDetails('property3-details', 'property3-btn')">More Details</button>
+            <div id="property3-details" class="more-details" style="display: none;">
+                <p>This villa has a rooftop terrace with a stunning ocean view, perfect for hosting parties or enjoying a peaceful evening. The villa also includes a private theater and gym for ultimate comfort and luxury.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- View All Properties Button -->
+    <div class="text-center mt-5">
+        <a href="/prop_mumbai" class="btn btn-secondary">View All Mumbai Properties</a>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(detailsId, buttonId) {
+        var detailsElement = document.getElementById(detailsId);
+        var buttonElement = document.getElementById(buttonId);
+
+        if (detailsElement.style.display === "none") {
+            detailsElement.style.display = "block";
+            buttonElement.textContent = "Less Details";
+        } else {
+            detailsElement.style.display = "none";
+            buttonElement.textContent = "More Details";
+        }
+    }
+</script>
+{% endblock %}

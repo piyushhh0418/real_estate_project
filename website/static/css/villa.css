@@ -1,0 +1,114 @@
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.villas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.villa-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.villa-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Image Styles */
+.villa-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.villa-images img {
+    width: 48%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Text Styles */
+.villa-item h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.villa-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.villa-item .text-muted {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* More Details Section */
+.more-details {
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.more-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.more-details li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    color: #333;
+}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Bangalore{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/banglore.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Bangalore</h1>
+
+    <!-- Property Listing 1 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/banglore1.jpg') }}" class="img-fluid rounded mb-2" alt="Property 1">
+            <img src="{{ url_for('static', filename='images/banglore1int.jpg') }}" class="img-fluid rounded mb-2" alt="Property 1 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Modern Apartment in Whitefield</h3>
+            <p class="text-muted">Whitefield, Bangalore</p>
+            <p>
+                A stylish 3 BHK apartment in the tech hub of Bangalore. The property offers a well-designed interior, a modern kitchen, and is close to major IT parks and shopping centers.
+            </p>
+            <ul>
+                <li>Area: 1800 sq. ft.</li>
+                <li>Price: ₹3 Crores</li>
+                <li>Bedrooms: 3</li>
+                <li>Bathrooms: 3</li>
+            </ul>
+            <a href="/property-details/6" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <!-- Property Listing 2 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/banglore2.jpg') }}" class="img-fluid rounded mb-2" alt="Property 2">
+            <img src="{{ url_for('static', filename='images/banglore2int.jpg') }}" class="img-fluid rounded mb-2" alt="Property 2 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Luxury Villa in Koramangala</h3>
+            <p class="text-muted">Koramangala, Bangalore</p>
+            <p>
+                This premium villa is located in one of Bangalore's most sought-after neighborhoods. It includes a private swimming pool, a lush garden, and sophisticated interiors.
+            </p>
+            <ul>
+                <li>Area: 4000 sq. ft.</li>
+                <li>Price: ₹10 Crores</li>
+                <li>Bedrooms: 4</li>
+                <li>Bathrooms: 5</li>
+            </ul>
+            <a href="/property-details/7" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

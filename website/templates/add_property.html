@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Property Info{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Add Your Property</h2>
+    <form action="{{ url_for('property.add_property') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Property Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price (in INR):</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bedrooms">Number of Bedrooms:</label>
+            <input type="number" class="form-control" id="bedrooms" name="bedrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bathrooms">Number of Bathrooms:</label>
+            <input type="number" class="form-control" id="bathrooms" name="bathrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label for="area_sqft">Area (in Sq. Ft.):</label>
+            <input type="number" class="form-control" id="area_sqft" name="area_sqft" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone_no">Phone Number:</label>
+            <span class="input-group-text">+91</span>
+            <input type="text" class="form-control" id="phone_no" name="phone_no" required>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="property_type">Property Type:</label>
+            <select class="form-control" id="property_type" name="property_type" required>
+                <option value="1RK">1RK</option>
+                <option value="1BHK">1BHK</option>
+                <option value="2BHK">2BHK</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image1">Property Image:</label>
+            <input type="file" class="form-control-file" id="image1" name="image1">
+        </div>
+
+        <div class="form-group">
+            <label for="image2">Interior Image:</label>
+            <input type="file" class="form-control-file" id="image2" name="image2">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Property</button>
+    </form>
+</div>
+
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container mt-4">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</body>
+{% endblock %}

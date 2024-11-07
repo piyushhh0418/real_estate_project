@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Delhi Properties{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/delhi.css') }}">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Properties in Delhi</h1>
+
+    <!-- Property Listing 1 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/delhi1.jpg') }}" class="img-fluid rounded mb-2" alt="Property 1">
+            <img src="{{ url_for('static', filename='images/delh.jpg') }}" class="img-fluid rounded mb-2" alt="Property 1 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Elegant Apartment in Connaught Place</h3>
+            <p class="text-muted">Connaught Place, Delhi</p>
+            <p>A beautiful 4 BHK apartment located in the heart of Delhi. This property offers a spacious layout, modern amenities, and is perfect for those who want to live in a prime location.</p>
+            <ul>
+                <li>Area: 2500 sq. ft.</li>
+                <li>Price: ₹7 Crores</li>
+                <li>Bedrooms: 4</li>
+                <li>Bathrooms: 4</li>
+            </ul>
+            <a href="/property-details/4" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <!-- Property Listing 2 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE4fHxhcGFydG1lbnR8ZW58MHx8fHwxNjE2OTQ1MTM5&ixlib=rb-1.2.1&q=80&w=400" class="img-fluid rounded mb-2" alt="Property 2">
+            <img src="{{ url_for('static', filename='images/delhi1int.jpg') }}" class="img-fluid rounded mb-2" alt="Property 2 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Luxurious Villa in South Delhi</h3>
+            <p class="text-muted">South Extension, Delhi</p>
+            <p>This exquisite villa is situated in one of the most prestigious neighborhoods of South Delhi. It features a private garden, a modern kitchen, and spacious bedrooms.</p>
+            <ul>
+                <li>Area: 3500 sq. ft.</li>
+                <li>Price: ₹12 Crores</li>
+                <li>Bedrooms: 5</li>
+                <li>Bathrooms: 5</li>
+            </ul>
+            <a href="/property-details/5" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <!-- Property Listing 3 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/delhi3.jpg') }}" class="img-fluid rounded mb-2" alt="Property 3">
+            <img src="{{ url_for('static', filename='images/delhi3int.jpg') }}" class="img-fluid rounded mb-2" alt="Property 3 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Modern Flat in Hauz Khas</h3>
+            <p class="text-muted">Hauz Khas, Delhi</p>
+            <p>A luxurious 3 BHK flat in Hauz Khas. The property is newly built with modern design and equipped with top-notch amenities, perfect for families.</p>
+            <ul>
+                <li>Area: 2000 sq. ft.</li>
+                <li>Price: ₹6 Crores</li>
+                <li>Bedrooms: 3</li>
+                <li>Bathrooms: 3</li>
+            </ul>
+            <a href="/property-details/6" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <!-- Property Listing 4 -->
+    <div class="row property-listing mb-5">
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='images/delhi4.jpg') }}" class="img-fluid rounded mb-2" alt="Property 4">
+            <img src="{{ url_for('static', filename='images/delhi4int.jpg') }}" class="img-fluid rounded mb-2" alt="Property 4 Interior">
+        </div>
+        <div class="col-md-7">
+            <h3>Spacious Penthouse in Vasant Kunj</h3>
+            <p class="text-muted">Vasant Kunj, Delhi</p>
+            <p>This lavish penthouse offers an incredible view of Delhi. With its spacious living area and top-notch amenities, it’s perfect for luxury living.</p>
+            <ul>
+                <li>Area: 4000 sq. ft.</li>
+                <li>Price: ₹15 Crores</li>
+                <li>Bedrooms: 6</li>
+                <li>Bathrooms: 6</li>
+            </ul>
+            <a href="/property-details/7" class="btn btn-primary">View Details</a>
+        </div>
+    </div>
+
+    <!-- More Properties Section -->
+    <div class="text-center mt-5">
+        <a href="/prop_delhi" class="btn btn-secondary">View All Delhi Properties</a>
+    </div>
+</div>
+
+{% endblock %}
